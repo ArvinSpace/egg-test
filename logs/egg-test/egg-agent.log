@@ -1,0 +1,10 @@
+2019-04-30 17:30:03,292 INFO 20376 [egg:logger] init all loggers with options: {"dir":"C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-test-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-30 17:30:03,307 INFO 20376 [egg:core] dump config after load, 11ms
+2019-04-30 17:30:03,345 INFO 20376 [egg-watcher] Start watching: ["C:\\workspace_webStorm\\90秒\\egg-test\\app","C:\\workspace_webStorm\\90秒\\egg-test\\config","C:\\workspace_webStorm\\90秒\\egg-test\\mocks","C:\\workspace_webStorm\\90秒\\egg-test\\mocks_proxy","C:\\workspace_webStorm\\90秒\\egg-test\\app.js"]
+2019-04-30 17:30:03,345 INFO 20376 [egg-watcher] Start watching: "C:\\workspace_webStorm\\90秒\\egg-test\\app"
+2019-04-30 17:30:03,346 INFO 20376 [egg-watcher] Start watching: "C:\\workspace_webStorm\\90秒\\egg-test\\config"
+2019-04-30 17:30:03,346 INFO 20376 [egg-watcher] Start watching: "C:\\workspace_webStorm\\90秒\\egg-test\\mocks"
+2019-04-30 17:30:03,346 INFO 20376 [egg-watcher] Start watching: "C:\\workspace_webStorm\\90秒\\egg-test\\mocks_proxy"
+2019-04-30 17:30:03,346 INFO 20376 [egg-watcher] Start watching: "C:\\workspace_webStorm\\90秒\\egg-test\\app.js"
+2019-04-30 17:30:03,346 INFO 20376 [egg-watcher:agent] watcher start success
+2019-04-30 17:30:03,389 INFO 20376 [egg:core] dump config after ready, 15ms

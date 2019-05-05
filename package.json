@@ -1,0 +1,29 @@
+{
+    "name": "egg-test",
+    "version": "1.0.0",
+    "description": "desc",
+    "main": "index.js",
+    "scripts": {
+        "dev": "egg-bin dev",
+        "test": "egg-bin test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ArvinSpace/egg-test.git"
+    },
+    "author": "Arvin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ArvinSpace/egg-test/issues"
+    },
+    "homepage": "https://github.com/ArvinSpace/egg-test#readme",
+    "dependencies": {
+        "egg": "^2.22.0",
+        "moment": "^2.24.0"
+    },
+    "devDependencies": {
+        "egg-bin": "^4.13.1",
+        "egg-mock": "^3.22.2",
+        "eslint": "^5.16.0"
+    }
+}

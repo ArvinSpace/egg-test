@@ -1,0 +1,14 @@
+2019-04-30 17:30:03,511 INFO 20376 [egg:logger] init all loggers with options: {"dir":"C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-test-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-04-30 17:30:03,518 INFO 20376 [egg-multipart] stream mode enable
+2019-04-30 17:30:03,599 INFO 20376 [egg-static] starting static serve /public/ -> C:\workspace_webStorm\90秒\egg-test\app\public
+2019-04-30 17:30:03,603 INFO 20376 [egg-security] use csrf middleware
+2019-04-30 17:30:03,604 INFO 20376 [egg-security] use methodnoallow middleware
+2019-04-30 17:30:03,605 INFO 20376 [egg-security] use noopen middleware
+2019-04-30 17:30:03,606 INFO 20376 [egg-security] use nosniff middleware
+2019-04-30 17:30:03,606 INFO 20376 [egg-security] use xssProtection middleware
+2019-04-30 17:30:03,607 INFO 20376 [egg-security] use xframe middleware
+2019-04-30 17:30:03,608 INFO 20376 [egg-security] use dta middleware
+2019-04-30 17:30:03,608 INFO 20376 [egg-security] compose 7 middlewares into one security middleware
+2019-04-30 17:30:03,633 INFO 20376 [egg:core] dump config after load, 18ms
+2019-04-30 17:30:03,643 INFO 20376 [egg-watcher:application] watcher start success
+2019-04-30 17:30:03,662 INFO 20376 [egg:core] dump config after ready, 18ms

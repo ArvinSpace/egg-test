@@ -1,0 +1,4 @@
+2019-04-30 17:30:03,664 INFO 20376 [Timer] C:\workspace_webStorm\90秒\egg-test\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 23396338ms at 2019-05-01 00:00:00.002
+2019-04-30 17:30:03,664 INFO 20376 [Timer] C:\workspace_webStorm\90秒\egg-test\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 23397336ms at 2019-05-01 00:00:01.000
+2019-04-30 17:30:03,518 INFO 20376 [egg-schedule]: register schedule C:\workspace_webStorm\90秒\egg-test\node_modules\egg-logrotator\app\schedule\clean_log.js
+2019-04-30 17:30:03,518 INFO 20376 [egg-schedule]: register schedule C:\workspace_webStorm\90秒\egg-test\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
