@@ -1,3 +1,0 @@
-2019-04-30 17:30:04,324 INFO 20376 [-/127.0.0.1/-/656ms GET /] codeList: ["1ckbn0","1d5r8s"]
-2019-04-30 17:30:04,324 INFO 20376 [-/127.0.0.1/-/657ms GET /] 1ckbn0 detail: https://api.myjson.com/bins/1ckbn0
-2019-04-30 17:30:04,326 INFO 20376 [-/127.0.0.1/-/659ms GET /] 1d5r8s detail: https://api.myjson.com/bins/1d5r8s
