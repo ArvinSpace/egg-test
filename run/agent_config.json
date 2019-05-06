@@ -218,8 +218,8 @@
       "dir": "C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test",
       "encoding": "utf8",
       "env": "local",
-      "level": "INFO",
-      "consoleLevel": "INFO",
+      "level": "DEBUG",
+      "consoleLevel": "DEBUG",
       "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
@@ -287,7 +287,7 @@
       ]
     },
     "news": {
-      "pageSize": 5,
+      "pageSize": 1,
       "serverUrl": "https://api.myjson.com/bins"
     },
     "coreMiddlewares": "~config~coreMiddleware",
@@ -440,15 +440,6 @@
       "from": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\plugin.js",
       "path": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-view",
       "version": "2.1.2"
-    },
-    "egg-mock": {
-      "enable": true,
-      "path": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-mock",
-      "name": "egg-mock",
-      "dependencies": [],
-      "optionalDependencies": [],
-      "env": [],
-      "version": "3.22.2"
     }
   }
 }

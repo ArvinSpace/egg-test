@@ -103,9 +103,7 @@
         "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-logrotator\\config\\locales",
         "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-static\\config\\locales",
         "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-view\\config\\locales",
-        "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-mock\\config\\locales",
         "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\locales",
-        "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-mock\\lib\\tmp\\config\\locales",
         "C:\\workspace_webStorm\\90秒\\egg-test\\config\\locales"
       ],
       "queryField": "locale",
@@ -250,8 +248,8 @@
       "dir": "C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test",
       "encoding": "utf8",
       "env": "local",
-      "level": "INFO",
-      "consoleLevel": "INFO",
+      "level": "DEBUG",
+      "consoleLevel": "DEBUG",
       "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
@@ -297,7 +295,6 @@
       "bodyParser",
       "overrideMethod",
       "session",
-      "clusterAppMock",
       "securities",
       "i18n",
       "eggLoaderTrace"
@@ -325,7 +322,7 @@
       ]
     },
     "news": {
-      "pageSize": 5,
+      "pageSize": 1,
       "serverUrl": "https://api.myjson.com/bins"
     },
     "coreMiddlewares": "~config~coreMiddleware",
@@ -490,15 +487,6 @@
       "from": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\plugin.js",
       "path": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-view",
       "version": "2.1.2"
-    },
-    "egg-mock": {
-      "enable": true,
-      "path": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg-mock",
-      "name": "egg-mock",
-      "dependencies": [],
-      "optionalDependencies": [],
-      "env": [],
-      "version": "3.22.2"
     }
   }
 }

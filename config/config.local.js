@@ -1,6 +1,11 @@
 'use strict';
 
 module.exports = appInfo => ({
+    logger: {
+        level: 'DEBUG',
+        consoleLevel: 'DEBUG',
+    },
+    
     robot: {
         ua: [
             /fuck/i,

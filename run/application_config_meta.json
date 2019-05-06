@@ -3,6 +3,24 @@
   "robot": {
     "ua": "C:\\workspace_webStorm\\90秒\\egg-test\\config\\config.local.js"
   },
+  "logger": {
+    "level": "C:\\workspace_webStorm\\90秒\\egg-test\\config\\config.local.js",
+    "consoleLevel": "C:\\workspace_webStorm\\90秒\\egg-test\\config\\config.local.js",
+    "dir": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "env": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "appLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.local.js"
+    },
+    "allowDebugAtProd": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js"
+  },
   "keys": "C:\\workspace_webStorm\\90秒\\egg-test\\config\\config.local.js",
   "news": {
     "pageSize": "C:\\workspace_webStorm\\90秒\\egg-test\\config\\config.local.js",
@@ -216,24 +234,6 @@
       "depth": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
       "parameterLimit": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js"
     }
-  },
-  "logger": {
-    "dir": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "encoding": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "env": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "level": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "consoleLevel": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "disableConsoleAfterReady": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "outputJSON": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "buffer": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "appLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "coreLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "agentLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "errorLogName": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",
-    "coreLogger": {
-      "consoleLevel": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.local.js"
-    },
-    "allowDebugAtProd": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js"
   },
   "httpclient": {
     "enableDNSCache": "C:\\workspace_webStorm\\90秒\\egg-test\\node_modules\\egg\\config\\config.default.js",

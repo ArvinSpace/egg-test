@@ -29,6 +29,8 @@ class NewsController extends Controller {
     async detail() {
         const ctx = this.ctx;
         const {code} = ctx.params;
+        
+        ctx.logger.debug(code, ctx.isIOS, ctx.isAndroid);
     
         const ret = {...{code: '0000', message: '成功', data: null}};
         
