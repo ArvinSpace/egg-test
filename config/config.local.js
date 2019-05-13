@@ -4,6 +4,7 @@ module.exports = appInfo => ({
     logger: {
         level: 'DEBUG',
         consoleLevel: 'DEBUG',
+        disableConsoleAfterReady: false,
     },
     
     robot: {
@@ -11,8 +12,6 @@ module.exports = appInfo => ({
             /fuck/i,
         ]
     },
-    
-    keys: 'local',
     
     news: {
         pageSize: 1,

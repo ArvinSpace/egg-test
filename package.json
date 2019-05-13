@@ -5,7 +5,12 @@
     "main": "index.js",
     "scripts": {
         "dev": "egg-bin dev",
-        "test": "egg-bin test"
+        "debug": "egg-bin debug",
+        "test": "egg-bin test",
+        "cov": "egg-bin cov",
+        "start": "egg-scripts start --daemon --title=egg-test --workers=2 --stdout=/mydata/logs/egg-test/stdout.log --stderr=/mydata/logs/egg-test/stderr.log --env=prod",
+        "stop": "egg-scripts stop --title=egg-test",
+        "start_local": "egg-scripts start --daemon --title=egg-test --workers=1 --stdout=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stdout.log --stderr=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stderr.log"
     },
     "repository": {
         "type": "git",
@@ -19,6 +24,7 @@
     "homepage": "https://github.com/ArvinSpace/egg-test#readme",
     "dependencies": {
         "egg": "^2.22.0",
+        "egg-scripts": "^2.11.0",
         "moment": "^2.24.0"
     },
     "devDependencies": {

@@ -60,6 +60,14 @@ class NewsService extends Service {
     async detail(code) {
         
         const url = `${this.config.news.serverUrl}/${code}`;
+        
+        this.ctx.logger.debug(url)
+    
+        const cluster = require('cluster');
+        
+        this.ctx.logger.debug(this.ctx.app.cache || 0, cluster.isMaster, cluster.isWorker, cluster.isWorker && cluster.worker.id, process.pid);
+        this.ctx.app.cache = (this.ctx.app.cache || 0) + 1;
+        
         const {data: result} = await this.ctx.curl(url, {dataType: 'json'});
         
         result.fromNow = this.ctx.helper.relativeTime(1540043086118);

@@ -1,7 +1,11 @@
 'use strict';
 
 module.exports = appInfo => ({
-    keys: 'dev',
+    logger: {
+        level: 'DEBUG',
+        consoleLevel: 'DEBUG',
+        disableConsoleAfterReady: false,
+    },
     
     news: {
         pageSize: 2,
