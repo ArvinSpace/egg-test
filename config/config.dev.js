@@ -10,5 +10,5 @@ module.exports = appInfo => ({
     news: {
         pageSize: 2,
         serverUrl: 'https://api.myjson.com/bins',
-    }
+    },
 });

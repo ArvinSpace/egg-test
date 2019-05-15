@@ -16,5 +16,9 @@ module.exports = appInfo => ({
     news: {
         pageSize: 1,
         serverUrl: 'https://api.myjson.com/bins',
+    },
+    
+    security: {
+        csrf: false
     }
 });

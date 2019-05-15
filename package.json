@@ -2,7 +2,7 @@
     "name": "egg-test",
     "version": "1.0.0",
     "description": "desc",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
         "dev": "egg-bin dev",
         "debug": "egg-bin debug",
@@ -10,7 +10,7 @@
         "cov": "egg-bin cov",
         "start": "egg-scripts start --daemon --title=egg-test --workers=2 --stdout=/mydata/logs/egg-test/stdout.log --stderr=/mydata/logs/egg-test/stderr.log --env=prod",
         "stop": "egg-scripts stop --title=egg-test",
-        "start_local": "egg-scripts start --daemon --title=egg-test --workers=1 --stdout=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stdout.log --stderr=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stderr.log"
+        "start-local": "egg-scripts start --daemon --title=egg-test --workers=1 --stdout=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stdout.log --stderr=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stderr.log --env=local"
     },
     "repository": {
         "type": "git",
@@ -25,11 +25,18 @@
     "dependencies": {
         "egg": "^2.22.0",
         "egg-scripts": "^2.11.0",
+        "egg-validate": "^2.0.2",
         "moment": "^2.24.0"
     },
     "devDependencies": {
         "egg-bin": "^4.13.1",
         "egg-mock": "^3.22.2",
-        "eslint": "^5.16.0"
+        "eslint": "^5.16.0",
+        "eslint-config-egg": "^7.4.1",
+        "eslint-plugin-eggache": "^1.0.0",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-jsdoc": "^4.8.4",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-react": "^7.13.0"
     }
 }

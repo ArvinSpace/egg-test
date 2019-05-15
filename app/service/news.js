@@ -70,7 +70,7 @@ class NewsService extends Service {
         
         const {data: result} = await this.ctx.curl(url, {dataType: 'json'});
         
-        result.fromNow = this.ctx.helper.relativeTime(1540043086118);
+        result.from_now = this.ctx.helper.relativeTime(1540043086118);
         
         return result;
     }
