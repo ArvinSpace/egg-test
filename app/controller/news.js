@@ -12,7 +12,7 @@ class NewsController extends Controller {
     
     /**
      * 列表
-     * @returns {Promise.<void>}
+     * @return {Promise.<void>}
      */
     async list() {
         const ctx = this.ctx;
@@ -24,7 +24,7 @@ class NewsController extends Controller {
     
     /**
      * 详情
-     * @returns {Promise.<void>}
+     * @return {Promise.<void>}
      */
     async detail() {
         const ctx = this.ctx;
@@ -39,12 +39,13 @@ class NewsController extends Controller {
     
         // 校验参数
         try {
-            const checkResult = ctx.validate(createRule, ctx.request.query);
+            const checkResult = ctx.validate(createRule, params);
             
             logger.debug(`checkResult:-----------------${checkResult}`);
         } catch (err) {
-            ctx.logger.warn(err.errors);
-            ret = {...{code: '9998', message: '失败', data: null}};
+            logger.error(err);
+            logger.warn(err.errors);
+            ret = {...{code: '9980', message: '参数错误'}};
             ctx.response.body = ret;
             
             return;
