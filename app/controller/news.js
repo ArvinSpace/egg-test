@@ -34,14 +34,12 @@ class NewsController extends Controller {
     
         let ret = {...{code: '0000', message: '成功', data: null}};
         const createRule = {
-            code: {type: 'string'},
+            code: {type: 'enum', values: ['1ckbn0', '1d5r8s']},
         };
     
         // 校验参数
         try {
-            const checkResult = ctx.validate(createRule, params);
-            
-            logger.debug(`checkResult:-----------------${checkResult}`);
+            ctx.validate(createRule, params);
         } catch (err) {
             logger.error(err);
             logger.warn(err.errors);
