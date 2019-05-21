@@ -3,10 +3,10 @@
 const path = require('path');
 
 module.exports = appInfo => {
-    process.env.EGG_SERVER_ENV = process.env.EGG_SERVER_ENV || 'local';
-    appInfo.env = process.env.EGG_SERVER_ENV;
+    appInfo.env = appInfo.env || process.env.EGG_SERVER_ENV || 'local';
+    process.env.EGG_SERVER_ENV = appInfo.env;
     
-    const logDir = path.join(appInfo.env !== 'local' ? '/mydata' : appInfo.baseDir, '/logs/egg-test');
+    const logDir = path.join(['dev', 'test', 'prod'].includes(appInfo.env) ? '/mydata' : appInfo.baseDir, '/logs/egg-test');
     
     console.log(`EGG_SERVER_ENV:${appInfo.env}`)
     console.log(`logDir:${logDir}`)
@@ -42,6 +42,41 @@ module.exports = appInfo => {
         robot: {
             ua: [
             ]
+        },
+    
+        mysql: {
+            clients: {
+                nintybid_business: {
+                    connectionLimit: 10,
+                    host: '',
+                    port: 0,
+                    user: '',
+                    password: '',
+                    database: '',
+                    debug: false,
+                },
+            
+                nintybid_readonly: {
+                    connectionLimit: 10,
+                    host: '',
+                    port: 0,
+                    user: '',
+                    password: '',
+                    database: '',
+                    debug: false,
+                },
+            },
+        
+            // 所有数据库配置的默认值
+            default: {
+                charset: 'utf8mb4',
+            },
+        
+            // 是否加载到 app 上，默认开启
+            app: true,
+        
+            // 是否加载到 agent 上，默认关闭
+            agent: false,
         },
     };
 };

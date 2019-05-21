@@ -24,6 +24,7 @@
     "homepage": "https://github.com/ArvinSpace/egg-test#readme",
     "dependencies": {
         "egg": "^2.22.0",
+        "egg-mysql": "^3.0.0",
         "egg-scripts": "^2.11.0",
         "egg-validate": "^2.0.2",
         "moment": "^2.24.0"
