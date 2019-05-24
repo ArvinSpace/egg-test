@@ -127,7 +127,7 @@ module.exports = {
         'no-buffer-constructor': 'error', // 禁用 Buffer() 构造函数
         
         // 面向对象规范相关
-        'new-cap': ['error', { "capIsNewExceptions": ["Router"] }], // 要求构造函数首字母大写，允许调用指定的首字母大写的函数时没有new操作符
+        'new-cap': ['error', { "capIsNew": false, "capIsNewExceptions": ["Router"] }], // 要求构造函数首字母大写，允许调用指定的首字母大写的函数时没有new操作符
         
         // 其他最佳实践规范
         'no-console': 'warn', // 禁用console，有助于代码发布前精简代码，调试时可忽略此规则

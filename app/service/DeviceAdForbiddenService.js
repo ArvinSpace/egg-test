@@ -18,11 +18,41 @@ class DeviceAdForbiddenService extends Service {
     async selectDeviceAdForbiddenByDeviceIdSync({deviceIdArr = []}) {
         const {ctx, app, service, config, logger} = this;
         let err, results;
-    
+        
+        // try {
+        //     results = await this.BaseReadonly.select('tb_device_ad_forbidden', {
+        //         where: {
+        //             device_id: deviceIdArr
+        //         }
+        //     });
+        // } catch (err) {
+        //     throw err;
+        // }
+        
         try {
-            results = await this.BaseReadonly.select('tb_device_ad_forbidden', {
-                where: {
-                    device_id: deviceIdArr
+            results = await app.read.DeviceAdForbiddenMapper.selectDeviceAdForbiddenByDeviceIdSync({deviceIdArr});
+        } catch (err) {
+            throw err;
+        }
+        
+        // logger.debug(results);
+        
+        return results;
+    }
+    
+    async rawQueryByReplace({deviceIdArr = []}) {
+        const {ctx, app, service, config, logger} = this;
+        let err, results;
+        
+        try {
+            results = await app.read.DeviceAdForbiddenMapper.rawQueryByReplace({
+                deviceIdArr,
+                options: {
+                    // raw: true,
+                    plain: true,
+                    // mapToModel: false,
+                    fieldMap: {id: 'd_id'},
+                    attributes: ['marquee_forbidden'],
                 }
             });
         } catch (err) {
@@ -33,7 +63,31 @@ class DeviceAdForbiddenService extends Service {
         
         return results;
     }
-
+    
+    async rawQueryByBind({deviceIdArr = []}) {
+        const {ctx, app, service, config, logger} = this;
+        let err, results;
+        
+        try {
+            results = await app.read.DeviceAdForbiddenMapper.rawQueryByBind({
+                deviceIdArr,
+                op: {
+                    // raw: true,
+                    plain: false,
+                    // model: app.read.DeviceAdForbiddenMapper,
+                    // mapToModel: true,
+                    attributes: ['device_id', 'marquee_forbidden'],
+                }
+            });
+        } catch (err) {
+            throw err;
+        }
+        
+        logger.debug(results);
+        
+        return results;
+    }
+    
 }
 
 module.exports = DeviceAdForbiddenService;

@@ -8,11 +8,11 @@ module.exports = appInfo => {
     
     const logDir = path.join(['dev', 'test', 'prod'].includes(appInfo.env) ? '/mydata' : appInfo.baseDir, '/logs/egg-test');
     
-    console.log(`EGG_SERVER_ENV:${appInfo.env}`)
-    console.log(`logDir:${logDir}`)
+    console.log(`appInfo.env:${appInfo.env},EGG_SERVER_ENV:${process.env.EGG_SERVER_ENV}`);
+    console.log(`logDir:${logDir}`);
     
     return {
-        keys: 'arvin',
+        // keys: 'arvin',
         
         listen: {
             port: 7001,
@@ -45,30 +45,9 @@ module.exports = appInfo => {
         },
     
         mysql: {
-            clients: {
-                nintybid_business: {
-                    connectionLimit: 10,
-                    host: '',
-                    port: 0,
-                    user: '',
-                    password: '',
-                    database: '',
-                    debug: false,
-                },
-            
-                nintybid_readonly: {
-                    connectionLimit: 10,
-                    host: '',
-                    port: 0,
-                    user: '',
-                    password: '',
-                    database: '',
-                    debug: false,
-                },
-            },
-        
             // 所有数据库配置的默认值
             default: {
+                debug: false,
                 charset: 'utf8mb4',
             },
         
