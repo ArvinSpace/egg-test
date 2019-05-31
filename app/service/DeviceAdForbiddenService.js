@@ -11,8 +11,8 @@ class DeviceAdForbiddenService extends Service {
     
     constructor(ctx) {
         super(ctx);
-        this.Base = this.app.mysql.get('nintybid_business');
-        this.BaseReadonly = this.app.mysql.get('nintybid_readonly');
+        // this.Base = this.app.mysql.get('nintybid_business');
+        // this.BaseReadonly = this.app.mysql.get('nintybid_readonly');
     }
     
     async selectDeviceAdForbiddenByDeviceIdSync({deviceIdArr = []}) {

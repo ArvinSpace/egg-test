@@ -14,13 +14,36 @@ class AdForbiddenController extends Controller {
         const now = Date.now();
         const {os, version, appid, deviceid, userid, longitude, latitude} = ctx.headers;
         const params = [os, version, appid, deviceid, userid, longitude, latitude];
-        
+    
         logger.info(`进入广告屏蔽：${params}`);
         
-        let ret = {...{code: '0000', message: '成功', data: null}}, err, results, deviceIdArr = [];
-        
+        this.ctx.logger.debug(`isStrNotEmpty(${deviceid})------------:${this.ctx.helper.isStrNotEmpty(deviceid)}`);
+        this.ctx.logger.debug(`calcStartTime(${{time_type: 1, time_point: '0,1'}})------------:${this.ctx.helper.calcStartTime({
+            time_type: 1,
+            time_point: '0,1'
+        })}`);
+        this.ctx.logger.debug(`getClientIp------------:${this.ctx.helper.getClientIp(this.ctx.request)}`);
+    
+        let ret = {...this.app.message.common.SUCCESS}, err, results, deviceIdArr = [];
+    
         ret.data = {ad_forbidden: 1};
         ctx.body = ret;
+    
+        const createRule = {
+            deviceid: {type: 'enum', values: ['fuck', 'arvin'], required: true},
+        };
+    
+        // 校验参数
+        try {
+            ctx.validate(createRule, ctx.headers);
+        } catch (err) {
+            logger.error(err);
+            logger.warn(err.errors);
+            ret = {...this.app.message.common.PARAMETERS_ERROR};
+            ctx.response.body = ret;
+        
+            return;
+        }
         
         if (!deviceid) {
             logger.info(`广告屏蔽结果：${params}，结果：${JSON.stringify(ret.data)}`);

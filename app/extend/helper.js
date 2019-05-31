@@ -8,10 +8,29 @@
 
 const moment = require('moment');
 
-module.exports = {
+const healper = {
     
     relativeTime(time) {
         return moment(time).fromNow();
     }
     
 };
+
+const helpers = [
+    require('../utils/CommonUtil'),
+    require('../utils/ValidateUtil'),
+    require('../utils/RedisLocker.class'),
+    require('../utils/VerifyCodeUtil'),
+    require('../utils/DateUtil'),
+    require('../utils/CalcTimeUtil'),
+    require('../utils/Forbidden'),
+    require('../utils/HtmlUtil'),
+    require('../utils/SignUtil'),
+    require('../utils/SmsUtil'),
+];
+
+for (const item of helpers) {
+    Object.assign(healper, item);
+}
+
+module.exports = healper;

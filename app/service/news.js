@@ -13,7 +13,7 @@ class NewsService extends Service {
     /**
      * 查询列表
      * @param page
-     * @returns {Promise.<Array>}
+     * @return {Promise.<Array>}
      */
     async list(page = 1) {
         // 读取配置
@@ -55,13 +55,12 @@ class NewsService extends Service {
     /**
      * 通过code查询详情
      * @param code
-     * @returns {Promise.<*>}
+     * @return {Promise.<*>}
      */
     async detail(code) {
-        
         const url = `${this.config.news.serverUrl}/${code}`;
         
-        this.ctx.logger.debug(url)
+        this.ctx.logger.debug(url);
     
         const cluster = require('cluster');
         

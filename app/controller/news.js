@@ -32,7 +32,7 @@ class NewsController extends Controller {
         const {code} = params;
     
     
-        let ret = {...{code: '0000', message: '成功', data: null}};
+        let ret = {...this.app.message.common.SUCCESS};
         const createRule = {
             code: {type: 'enum', values: ['1ckbn0', '1d5r8s']},
         };
@@ -43,7 +43,7 @@ class NewsController extends Controller {
         } catch (err) {
             logger.error(err);
             logger.warn(err.errors);
-            ret = {...{code: '9980', message: '参数错误'}};
+            ret = {...this.app.message.common.PARAMETERS_ERROR};
             ctx.response.body = ret;
             
             return;
