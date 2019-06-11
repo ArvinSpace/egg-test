@@ -5,6 +5,7 @@
  * Create Time: 2019-05-20 17:40
  * Description:
  */
+const Promise = require('bluebird');
 const Controller = require('egg').Controller;
 
 class AdForbiddenController extends Controller {
@@ -13,26 +14,37 @@ class AdForbiddenController extends Controller {
         const {ctx, app, service, config, logger} = this;
         const now = Date.now();
         const {os, version, appid, deviceid, userid, longitude, latitude} = ctx.headers;
+        const {redisKey} = ctx.query;
         const params = [os, version, appid, deviceid, userid, longitude, latitude];
-    
+        
         logger.info(`进入广告屏蔽：${params}`);
         
-        this.ctx.logger.debug(`isStrNotEmpty(${deviceid})------------:${this.ctx.helper.isStrNotEmpty(deviceid)}`);
-        this.ctx.logger.debug(`calcStartTime(${{time_type: 1, time_point: '0,1'}})------------:${this.ctx.helper.calcStartTime({
+        ctx.logger.debug(`isStrNotEmpty(${deviceid})------------:${ctx.helper.isStrNotEmpty(deviceid)}`);
+        ctx.logger.debug(`calcStartTime(${{time_type: 1, time_point: '0,1'}})------------:${ctx.helper.calcStartTime({
             time_type: 1,
             time_point: '0,1'
         })}`);
-        this.ctx.logger.debug(`getClientIp------------:${this.ctx.helper.getClientIp(this.ctx.request)}`);
-    
+        ctx.logger.debug(`getClientIp------------:${ctx.helper.getClientIp(ctx.request)}`);
+        ctx.logger.debug(`context ip------------:${ctx.ip}`);
+        
         let ret = {...this.app.message.common.SUCCESS}, err, results, deviceIdArr = [];
-    
+        
+        if (redisKey) {
+            [err, results] = await new Promise(resolve => {
+                app.redis.base.getBussRedisClient().get(redisKey, function(err, reply) {
+                    return resolve([err, reply]);
+                });
+            });
+            ctx.logger.debug(`redis result------------:${results}`);
+        }
+        
         ret.data = {ad_forbidden: 1};
         ctx.body = ret;
-    
+        
         const createRule = {
             deviceid: {type: 'enum', values: ['fuck', 'arvin'], required: true},
         };
-    
+        
         // 校验参数
         try {
             ctx.validate(createRule, ctx.headers);
@@ -41,13 +53,13 @@ class AdForbiddenController extends Controller {
             logger.warn(err.errors);
             ret = {...this.app.message.common.PARAMETERS_ERROR};
             ctx.response.body = ret;
-        
+            
             return;
         }
         
         if (!deviceid) {
             logger.info(`广告屏蔽结果：${params}，结果：${JSON.stringify(ret.data)}`);
-
+            
             return;
         }
         
@@ -61,7 +73,7 @@ class AdForbiddenController extends Controller {
             
             return;
         }
-    
+        
         if (results && results.length) {
             ret.data.ad_forbidden = results[0].marquee_forbidden;
         }
@@ -84,12 +96,12 @@ class AdForbiddenController extends Controller {
         
         if (!deviceid) {
             logger.info(`广告屏蔽结果：${params}，结果：${JSON.stringify(ret.data)}`);
-
+            
             return;
         }
         
         deviceIdArr.push(deviceid);
-    
+        
         try {
             result = await service.deviceAdForbiddenService.rawQueryByReplace({deviceIdArr});
         } catch (err) {
@@ -98,7 +110,7 @@ class AdForbiddenController extends Controller {
             
             return;
         }
-    
+        
         if (result) {
             ret.data.ad_forbidden = result.marquee_forbidden;
         }
@@ -134,7 +146,7 @@ class AdForbiddenController extends Controller {
             
             return;
         }
-    
+        
         if (results && results.length) {
             const result = results.find(item => item.device_id === deviceIdArr[0]);
             

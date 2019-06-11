@@ -9,9 +9,10 @@ module.exports = appInfo => ({
         disableConsoleAfterReady: false,
     },
     
-    news: {
-        pageSize: 2,
-        serverUrl: 'http://api.myjson.com/bins',
+    robot: {
+        ua: [
+            /fuck/i,
+        ]
     },
     
     security: {
@@ -32,5 +33,16 @@ module.exports = appInfo => ({
                 return false;
             },
         },
-    }
+    },
+    
+    mysql: {
+    },
+    
+    sequelize: {
+    },
+    
+    news: {
+        pageSize: 2,
+        serverUrl: 'http://api.myjson.com/bins',
+    },
 });
