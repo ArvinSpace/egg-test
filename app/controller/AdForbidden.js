@@ -20,7 +20,7 @@ class AdForbiddenController extends Controller {
         logger.info(`进入广告屏蔽：${params}`);
         
         ctx.logger.debug(`isStrNotEmpty(${deviceid})------------:${ctx.helper.isStrNotEmpty(deviceid)}`);
-        ctx.logger.debug(`calcStartTime(${{time_type: 1, time_point: '0,1'}})------------:${ctx.helper.calcStartTime({
+        ctx.logger.debug(`calcStartTime({time_type: 1, time_point: '0,1'})------------:${ctx.helper.calcStartTime({
             time_type: 1,
             time_point: '0,1'
         })}`);
