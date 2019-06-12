@@ -31,7 +31,7 @@ class AdForbiddenController extends Controller {
         
         if (redisKey) {
             [err, results] = await new Promise(resolve => {
-                app.redis.base.getBussRedisClient().get(redisKey, function(err, reply) {
+                app.redis.base.buss.get(redisKey, function(err, reply) {
                     return resolve([err, reply]);
                 });
             });

@@ -2,7 +2,7 @@
  * Created by Arvin on 2019/6/10.
  */
 const redis = require('redis');
-let bussRedisClient;
+const pool = {};
 
 module.exports = class Base {
     
@@ -14,16 +14,16 @@ module.exports = class Base {
      * 获取业务Redis连接
      * @return {*}
      */
-    getBussRedisClient() {
-        if (bussRedisClient) {
-            return bussRedisClient;
+    get buss() {
+        if (pool.buss) {
+            return pool.buss;
         }
-        bussRedisClient = redis.createClient(this.app.config.redis.port, this.app.config.redis.host, this.app.config.redis.opts);
-        bussRedisClient.on('error', function(err) {
+        pool.buss = redis.createClient(this.app.config.redis.port, this.app.config.redis.host, this.app.config.redis.opts);
+        pool.buss.on('error', function(err) {
             this.logger.error(err);
         });
     
-        return bussRedisClient;
+        return pool.buss;
     }
         
 };
