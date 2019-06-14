@@ -19,7 +19,7 @@ module.exports = appInfo => {
         
         cluster: {
             listen: {
-                port: 6666,
+                port: appInfo.pkg.run_port,
                 hostname: '0.0.0.0',
             }
         },
@@ -85,10 +85,6 @@ module.exports = appInfo => {
         middleware: [
             'robot'
         ],
-        
-        robot: {
-            ua: []
-        },
         
         alidayu: {
             appkey: '',
