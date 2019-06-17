@@ -6,6 +6,16 @@
  * Description:
  */
 module.exports = {
+    static: {
+        enable: false,
+    },
+    session: {
+        enable: false,
+    },
+    i18n: {
+        enable: false,
+    },
+    
     validate: {
         enable: true,
         package: 'egg-validate',
