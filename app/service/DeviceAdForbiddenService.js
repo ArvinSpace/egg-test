@@ -40,6 +40,30 @@ class DeviceAdForbiddenService extends Service {
         return results;
     }
     
+    async rawQuery({deviceIdArr = []}) {
+        const {ctx, app, service, config, logger} = this;
+        let err, results;
+        
+        try {
+            results = await app.read.DeviceAdForbiddenMapper.rawQuery({
+                deviceIdArr,
+                op: {
+                    // raw: true,
+                    plain: false,
+                    // model: app.read.DeviceAdForbiddenMapper,
+                    // mapToModel: true,
+                    attributes: ['device_id', 'marquee_forbidden'],
+                }
+            });
+        } catch (err) {
+            throw err;
+        }
+        
+        logger.debug(results);
+        
+        return results;
+    }
+    
     async rawQueryByReplace({deviceIdArr = []}) {
         const {ctx, app, service, config, logger} = this;
         let err, results;

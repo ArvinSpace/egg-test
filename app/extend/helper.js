@@ -8,7 +8,7 @@
 
 const moment = require('moment');
 
-const healper = {
+const helper = {
     
     relativeTime(time) {
         return moment(time).fromNow();
@@ -27,10 +27,11 @@ const helpers = [
     require('../utils/HtmlUtil'),
     require('../utils/SignUtil'),
     require('../utils/SmsUtil'),
+    require('../message/Common'),
 ];
 
 for (const item of helpers) {
-    Object.assign(healper, item);
+    Object.assign(helper, item);
 }
 
-module.exports = healper;
+module.exports = helper;

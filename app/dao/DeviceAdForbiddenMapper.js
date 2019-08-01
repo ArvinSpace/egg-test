@@ -13,15 +13,15 @@ module.exports = (app, model) => {
     const {Op, INTEGER, STRING, TINYINT, DOUBLE, BIGINT} = app.Sequelize;
     
     const DeviceAdForbidden = model.define('tb_device_ad_forbidden', {
-        'id': {type: INTEGER, primaryKey: true, autoIncrement: true},
-        'user_id': {type: INTEGER},
-        'device_id': STRING(30),
-        'marquee_forbidden': TINYINT,
-        'longitude': DOUBLE(10, 6),
-        'latitude': DOUBLE(10, 6),
-        'create_time': BIGINT,
-        'update_time': BIGINT,
-    },
+            'id': {type: INTEGER, primaryKey: true, autoIncrement: true},
+            'user_id': {type: INTEGER},
+            'device_id': STRING(30),
+            'marquee_forbidden': TINYINT,
+            'longitude': DOUBLE(10, 6),
+            'latitude': DOUBLE(10, 6),
+            'create_time': BIGINT,
+            'update_time': BIGINT,
+        },
     );
     
     DeviceAdForbidden.selectDeviceAdForbiddenByDeviceIdSync = async function({deviceIdArr = []}) {
@@ -33,6 +33,23 @@ module.exports = (app, model) => {
                 }
             }
         });
+    };
+    
+    DeviceAdForbidden.rawQuery = async function({deviceIdArr = [], op = {}}) {
+        let sql = 'select ?? from ?? where device_id in(?)';
+        const params = [
+            op.attributes || ['id', 'user_id', 'device_id', 'marquee_forbidden', 'longitude', 'latitude', 'create_time', 'update_time'],
+            'tb_device_ad_forbidden',
+            deviceIdArr,
+        ];
+        const def = {
+            type: model.QueryTypes.SELECT,
+        };
+        
+        sql = mysql.format(sql, params);
+        op = _.assign(def, _.cloneDeep(op));
+        
+        return await model.query(sql, op);
     };
     
     DeviceAdForbidden.rawQueryByReplace = async function({deviceIdArr = [], options = {}}) {

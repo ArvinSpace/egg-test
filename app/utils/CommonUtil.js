@@ -37,9 +37,6 @@ const CommonUtil = {
      * @return {*|string|string}
      */
     getClientIp(req) {
-        this.config;
-        this.logger;
-        
         return requestIp.getClientIp(req) || '';
     },
 
@@ -147,8 +144,8 @@ const CommonUtil = {
             try {
                 arr = eval(`(${jsonStr})`);
             } catch (e) {
-                logger.error(e);
-                logger.error(jsonStr);
+                this.logger.error(e);
+                this.logger.error(jsonStr);
             }
         }
         if (!arr) {
@@ -167,8 +164,8 @@ const CommonUtil = {
             try {
                 obj = eval(`(${jsonStr})`);
             } catch (e) {
-                logger.error(e);
-                logger.error(jsonStr);
+                this.logger.error(e);
+                this.logger.error(jsonStr);
             }
         }
 

@@ -60,8 +60,4 @@ module.exports = class AppBootHook {
         // 此时可以从 app.server 拿到 server 的实例
     }
     
-    async beforeClose() {
-        // Do some thing before app close.
-    }
-    
 };

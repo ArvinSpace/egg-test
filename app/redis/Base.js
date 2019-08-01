@@ -20,7 +20,7 @@ module.exports = class Base {
         }
         pool.buss = redis.createClient(this.app.config.redis.port, this.app.config.redis.host, this.app.config.redis.opts);
         pool.buss.on('error', function(err) {
-            this.logger.error(err);
+            this.app.logger.error(err);
         });
     
         return pool.buss;

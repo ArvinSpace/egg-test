@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = appInfo => ({
-    proxy: true,
+    proxy: false,
     
     logger: {
         level: 'DEBUG',
@@ -10,7 +10,7 @@ module.exports = appInfo => ({
     },
     
     origin: {
-        whiteList: []
+        whiteList: [`http://localhost:${appInfo.pkg.run_port}`]
     },
     
     robot: {
@@ -124,7 +124,7 @@ module.exports = appInfo => ({
     },
     
     news: {
-        pageSize: 2,
+        pageSize: 1,
         serverUrl: 'http://api.myjson.com/bins',
-    },
+    }
 });

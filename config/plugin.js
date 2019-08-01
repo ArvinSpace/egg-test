@@ -30,4 +30,8 @@ module.exports = {
         enable: true,
         package: 'egg-sequelize',
     },
+    
+    onerror: {
+        // enable: false,
+    },
 };

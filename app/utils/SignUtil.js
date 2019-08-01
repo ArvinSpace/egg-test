@@ -86,8 +86,7 @@ const SignUtil = {
      * @return {{}} 排序后的对象
      */
     sortDict: function sortDict(object) {
-        const targetObject = {},
-            keys = Object.keys(object).sort();
+        const targetObject = {}, keys = Object.keys(object).sort();
 
         for (let i = 0, n = keys.length, key; i < n; ++i) {
             key = keys[i];

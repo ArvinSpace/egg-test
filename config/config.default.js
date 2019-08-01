@@ -16,6 +16,18 @@ module.exports = appInfo => {
         // keys: 'arvin',
         
         APP_NAME: '90秒',
+        ANDROID_HOST: '',
+        IOS_HOST: '',
+        WXMINI_HOST : '',
+        WAP_HOST: '',
+        PUBLIC_KEY: '',
+        PUBLIC_KEY_WXMINI : '',
+        PUBLIC_KEY_IOS : '',
+        PUBLIC_KEY_ANDROID : '',
+    
+        ipHeaders: 'X-Real-IP, X-Forwarded-For',
+        maxProxyCount: 1,
+        hostHeaders: 'Host',
         
         cluster: {
             listen: {
@@ -31,10 +43,6 @@ module.exports = appInfo => {
         logrotator: {
             filesRotateByHour: [
                 path.join(logDir, `${appInfo.name}-web.log`),
-                path.join(logDir, 'common-error.log'),
-                path.join(logDir, 'egg-web.log'),
-                path.join(logDir, 'egg-agent.log'),
-                path.join(logDir, 'egg-schedule.log'),
                 path.join(logDir, 'stdout.log'),
                 path.join(logDir, 'stderr.log'),
             ],
@@ -65,6 +73,37 @@ module.exports = appInfo => {
                 call: true,
             }
         },
+    
+        onerror: {
+            // eslint-disable-next-line handle-callback-err
+            all(err, ctx) {
+                // 在此处定义针对所有响应类型的错误处理方法
+                // 注意，定义了 config.all 之后，其他错误处理方法不会再生效
+                ctx.body = JSON.stringify(ctx.app.message.common.SYSTEM_EXCEPTION);
+                ctx.status = 500;
+            },
+            // eslint-disable-next-line handle-callback-err
+            html(err, ctx) {
+                // html hander
+                ctx.body = 'error';
+                ctx.status = 500;
+            },
+            // eslint-disable-next-line handle-callback-err
+            json(err, ctx) {
+                // json hander
+                ctx.body = {...ctx.app.message.common.SYSTEM_EXCEPTION};
+                ctx.status = 500;
+            },
+        },
+    
+        onClientError: async (err, socket, app) => {
+            app.logger.error(err);
+        
+            return {
+                status: 200,
+                body: {...app.message.common.SYSTEM_EXCEPTION},
+            };
+        },
         
         mysql: {
             // 所有数据库配置的默认值
@@ -81,11 +120,17 @@ module.exports = appInfo => {
         },
         
         sequelize: {},
-        
+    
         middleware: [
-            'robot'
+            'origin',
+            'xss',
+            'robot',
+            'signVerfy',
+            'loginVerify'
         ],
-        
+        loginVerify: {
+            match: '*/u',
+        },
         alidayu: {
             appkey: '',
             appsecret: '',

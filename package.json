@@ -5,13 +5,16 @@
     "run_port": 1024,
     "main": "main.js",
     "scripts": {
-        "dev": "egg-bin dev --env=local",
-        "debug": "egg-bin debug --env=local",
+        "dev": "egg-bin dev",
+        "debug": "egg-bin debug",
         "test": "egg-bin test",
         "cov": "egg-bin cov",
-        "start": "egg-scripts start --daemon --title=egg-test --workers=2 --stdout=/mydata/logs/egg-test/stdout.log --stderr=/mydata/logs/egg-test/stderr.log",
+        "start": "egg-scripts start --daemon --title=egg-test --stdout=/mydata/logs/egg-test/stdout.log --stderr=/mydata/logs/egg-test/stderr.log",
         "stop": "egg-scripts stop --title=egg-test",
         "start-local": "egg-scripts start --daemon --title=egg-test --workers=1 --stdout=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stdout.log --stderr=C:\\workspace_webStorm\\90秒\\egg-test\\logs\\egg-test\\stderr.log --env=local"
+    },
+    "engines": {
+        "node": ">= 8.0.0"
     },
     "repository": {
         "type": "git",

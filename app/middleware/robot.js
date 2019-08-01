@@ -5,12 +5,9 @@
  * Create Time: 2019-04-30 15:15
  * Description:
  */
-
-module.exports = function(options, app) {
-    
-    return async function(ctx, next) {
+module.exports = (options, app) =>
+    async function(ctx, next) {
         const source = ctx.get('user-agent') || '';
-        // const source = ctx.headers['user-agent'] || '';
         
         ctx.logger.info(`source: ${source}`);
         
@@ -23,5 +20,3 @@ module.exports = function(options, app) {
             return await next();
         }
     };
-    
-};

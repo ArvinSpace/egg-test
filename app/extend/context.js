@@ -17,5 +17,16 @@ module.exports = {
         const iosReg = /android/i;
         
         return iosReg.test(this.get('user-agent'));
-    }
+    },
+    
+    /**
+     * 响应请求
+     * @param data {{status: Number, ret: {code: xxx, message: xxx, data: ...}}}
+     */
+    answer(data) {
+        if (data.status) {
+            this.status = data.status;
+        }
+        this.body = data.ret;
+    },
 };
