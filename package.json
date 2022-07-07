@@ -35,7 +35,7 @@
         "egg-scripts": "^2.11.0",
         "egg-sequelize": "^5.0.0",
         "egg-validate": "^2.0.2",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "mysql2": "^1.6.5",
         "node-uuid": "^1.4.8",
         "qiniu": "^6.1.8",
