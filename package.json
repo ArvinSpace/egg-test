@@ -45,7 +45,7 @@
         "urllib": "2.33.3"
     },
     "devDependencies": {
-        "egg-bin": "^4.13.1",
+        "egg-bin": "^5.9.0",
         "egg-mock": "^3.22.2",
         "eslint": "^5.16.0",
         "eslint-config-egg": "^7.4.1",
